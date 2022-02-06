@@ -1,0 +1,103 @@
+%%%
+
+%\begin{table}[hb]% h asks to places the floating element [h]ere.
+%  \begin{tabular}{lll}
+%          \toprule
+%          \multicolumn{3}{c}{\small Logistic Regression}\\
+%            Variable & Coef. Men & Coef. Women\\
+%          \midrule
+%            Attractive & $0.8976^{***}$  & $0.5503^{***}$ \\
+%            Sincere & $-0.3902^{***}$ & $-0.1767^{***}$	\\
+%            Intelligent & $-0.1953^{***}$ & $-0.0411$	\\
+%            Fun & $0.2516^{***}$ & $0.3114^{***}$ \\
+%            Likeable & $1.2792^{***}$ & $0.8157^{***}$ \\
+%            Shared Interest & $0.0125$ & $0.0220$ \\
+%            Ambitious & $-0.2040^{***}$ & $-0.2092^{***}$ \\
+%            Same Ethnicity & $-0.0463$ & $0.0127$ \\
+%            Perceived Success & x & x \\
+%            Perceived Likelihood & x & x \\
+%          \bottomrule
+%    \end{tabular}
+%      \caption{Classification Evaluation}
+%\end{table}
+
+%\begin{table}[hb]% h asks to places the floating element [h]ere.
+%\begin{tabular}{lccc}
+%      \toprule
+%      \multicolumn{4}{c}{\small Model Comparison on Validation Set}\\
+%        Model  & Accuracy & Precision & Recall\\
+%      \midrule
+%        Logistic Regression & x & x & x\\ % PICKED MODEL WITH BEST IOU
+%        Naive Bayes & x & x & x\\
+%        SVM & x & x & x \\
+%        Random Forest & x & x & x \\
+%        MLP & x & x & x \\
+%        KNN & x & x & x \\
+%        \midrule
+%        \multicolumn{4}{c}{\small Final Model on Test Set}\\   
+%        x & x & x & x \\
+%      \bottomrule
+%      \end{tabular}
+%      \caption{Classification Evaluation}
+%\end{table}
+
+\newpage
+\subsection{Influence of the Self-Image on a Successful Impression}
+To address if self-image has any influence, we are following \ref{sec:factors_impress} closesly by applying a logistic regression but are using the final decision of the participant's partner as a target variable (see \autoref{tab:feature_2}).  
+We are again concluding this analysis by running multiple classification algorithms, analysing the actual predictive power of the self-image on the partners decision (see \autoref{tab:classif_2}).
+
+\textbf{Data Preparation.}
+
+\textbf{Feature Importance.}
+Only global feature attribution, no local explanation. 
+
+\textbf{Predictive Power.}
+Only global feature attribution, no local explanation.
+
+\begin{figure}
+\begin{floatrow}
+\capbtabbox{%
+     \begin{tabular}{lrr}
+          \toprule
+          \multicolumn{3}{c}{\small Logistic Regression}\\
+            Variable & Coef. \male & Coef. \female \\
+          \midrule
+            Attractive & $0.89^{*}$  & $0.55^{*}$ \\
+            Sincere & $-0.39^{*}$ & $-0.17^{*}$	\\
+            Intelligent & $-0.19^{*}$ & $-0.04^{\phantom{*}}$	\\
+            Fun & $0.25^{*}$ & $0.31^{*}$ \\
+            Likeable & $1.27^{*}$ & $0.81^{*}$ \\
+            Shared Interest & $0.01^{\phantom{*}}$ & $0.02^{\phantom{*}}$ \\
+            Ambitious & $-0.20^{*}$ & $-0.20^{*}$ \\
+            Same Ethnicity & $-0.04^{\phantom{*}}$ & $0.01^{\phantom{*}}$ \\
+            Perc. Exp. Success & x & x \\
+            Perc. Likelihood & x & x \\
+          \bottomrule
+    \end{tabular}
+}{%
+  \caption{Feature importance}%
+   \label{tab:feature_2}
+}
+\capbtabbox{%
+     \begin{tabular}{lcc}
+      \toprule
+      \multicolumn{3}{c}{\small Model Comparison on Validation Set}\\
+        Model  & Acc. \male & Acc. \female\\
+      \midrule
+        Logistic Reg. & x & x \\ % PICKED MODEL WITH BEST IOU
+        Naive Bayes & x & x \\
+        SVM & x & x \\
+        Random Forest & x & x \\
+        MLP & x & x \\
+        KNN & x & x \\
+        \midrule
+        \multicolumn{3}{c}{\small Final Model on Test Set}\\   
+        x & x & x  \\
+      \bottomrule
+      \end{tabular}
+}{%
+  \caption{Classification}%
+   \label{tab:classif_2}
+}
+\end{floatrow}
+\end{figure}
